@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RL Teaching Platform - 强化学习教学平台</title>
+    
+    <!-- 外部字体和图标 -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Markdown 解析器 -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    
+    <!-- 样式文件 -->
+    <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body>
+    <!-- 背景 -->
+    <div class="bg-grid"></div>
+    <div class="bg-glow bg-glow-1"></div>
+    <div class="bg-glow bg-glow-2"></div>
+
+    <!-- 头部 -->
+    <header>
+        <div class="logo">
+            <div class="logo-icon">
+                <i class="fas fa-robot"></i>
+            </div>
+            <div class="logo-text">RL Teaching Platform</div>
+        </div>
+        <div class="status-indicator status-idle" id="statusIndicator">
+            <span class="status-text">空闲</span>
+        </div>
+    </header>
+
+    <!-- 主内容 - 三区域布局 -->
+    <div class="container">
+        <!-- 顶部：算法选择区域 -->
+        <div class="top-algorithm-selector">
+            <div class="selector-header">
+                <div class="selector-title">
+                    <i class="fas fa-graduation-cap" style="color: var(--primary);"></i>
+                    选择学习算法
+                </div>
+                <div class="selector-subtitle">
+                    从基础到高级，循序渐进掌握强化学习算法
+                </div>
+            </div>
+            
+            <div class="algorithms-grid" id="algorithmsGrid">
+                <!-- 算法卡片将通过 JavaScript 动态生成 -->
+            </div>
+        </div>
+        
+        <!-- 下方：双栏内容区 -->
+        <div class="content-area">
+            <!-- 左侧：学习教程区域 -->
+            <div class="tutorial-panel">
+                <div class="tutorial-header">
+                    <div class="tutorial-title">
+                        <i class="fas fa-book" style="color: var(--primary);"></i>
+                        <span id="tutorialHeaderTitle">算法教学</span>
+                    </div>
+                </div>
+                <div class="tutorial-content">
+                    <div class="markdown-content" id="tutorialContent">
+                        <!-- Markdown内容将通过JavaScript加载 -->
+                        <div style="text-align: center; padding: 40px; color: var(--text-muted);">
+                            <i class="fas fa-graduation-cap" style="font-size: 48px; margin-bottom: 20px; opacity: 0.5;"></i>
+                            <h3 style="margin-bottom: 12px;">欢迎来到强化学习教学平台</h3>
+                            <p>请选择一个算法开始学习之旅</p>
+                            <p style="font-size: 14px; margin-top: 16px; color: var(--text-muted);">
+                                左侧将展示算法理论教学<br>
+                                右侧将提供交互式实验环境
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 右侧：实验操作区域 -->
+            <div class="experiment-panel">
+                <div class="experiment-header">
+                    <div class="experiment-title">
+                        <i class="fas fa-flask" style="color: var(--success);"></i>
+                        <span id="experimentHeaderTitle">实验操作</span>
+                    </div>
+                </div>
+                <div class="experiment-content">
+                    <!-- 实验操作内容将根据选择的算法动态生成 -->
+                    <div id="experimentDynamicContent">
+                        <div style="text-align: center; padding: 60px 20px; color: var(--text-muted);">
+                            <i class="fas fa-flask" style="font-size: 48px; margin-bottom: 20px; opacity: 0.5;"></i>
+                            <h3 style="margin-bottom: 12px;">交互式实验环境</h3>
+                            <p>请选择算法以解锁对应的实验功能</p>
+                            <p style="font-size: 14px; margin-top: 16px; color: var(--text-muted);">
+                                实验参数、训练控制和可视化将根据所选算法自动调整
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript 模块 -->
+    <script type="module" src="/static/js/main.js"></script>
+</body>
+</html>
